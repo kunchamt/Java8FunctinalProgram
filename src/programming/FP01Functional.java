@@ -15,9 +15,9 @@ public class FP01Functional {
 	// System.out.println(number);
 	// }
 
-	// private static boolean isEven(int number) {
-	// return number%2 == 0;
-	// }
+	 private static boolean isEven(int number) {
+	 return number%2 == 0;
+	}
 
 	private static void printAllNumbersInListFunctional(List<Integer> numbers) {
 		// What to do?
@@ -36,8 +36,10 @@ public class FP01Functional {
 	}
 	
 	private static void printSquaresOfEvenNumbersInListFunctional(List<Integer> numbers) {
-		numbers.stream() // Convert to Stream
-				.filter(number -> number % 2 == 0) // Lamdba Expression
+		numbers.stream()
+				// Convert to Stream
+				.filter(FP01Functional::isEven) // Lamdba Expression
+
 				//mapping - x -> x * x
 				.map(number -> number * number)
 				.forEach(System.out::println);// Method Reference
